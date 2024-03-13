@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <!--    approve btn add-->
+    <record id="view_order_form_custom" model="ir.ui.view">
+        <field name="name">sale.order.approve.btn</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_cancel']" position="after">
+                <button string="Approve" name="approve_fn" type="object" class="btn-primary "/>
+            </xpath>
+             <xpath expr="//button[@name='approve_fn']" position="after">
+                <button string="Reject" name="reject_fn" type="object" class="btn-danger "/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

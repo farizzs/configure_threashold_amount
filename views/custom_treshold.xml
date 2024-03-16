@@ -17,7 +17,7 @@
                     <div class="text-muted mb16">
                         Set Threshold amount
                     </div>
-                    <field name="threshold_amount"/>
+                    <field name="threshold_amount" />
                 </div>
             </div>
         </xpath>

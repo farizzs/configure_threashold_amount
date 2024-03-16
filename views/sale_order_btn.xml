@@ -7,10 +7,12 @@
         <field name="inherit_id" ref="sale.view_order_form"/>
         <field name="arch" type="xml">
             <xpath expr="//button[@name='action_cancel']" position="after">
-                <button string="Approve" name="approve_fn" type="object" class="btn-primary "/>
+                <button name="approve_fn" string="Approve" type="object" class="oe_highlight"
+                        attrs="{'invisible': [('state', '!=', 'draft')]}"/>
             </xpath>
-             <xpath expr="//button[@name='approve_fn']" position="after">
-                <button string="Reject" name="reject_fn" type="object" class="btn-danger "/>
+            <xpath expr="//button[@name='approve_fn']" position="after">
+                <button string="Reject" name="reject_fn" type="object" class="btn-danger"
+                        attrs="{'invisible': [('state', '!=', 'draft')]}"/>
             </xpath>
         </field>
     </record>

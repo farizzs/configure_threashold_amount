@@ -8,11 +8,16 @@
         <field name="arch" type="xml">
             <xpath expr="//button[@name='action_cancel']" position="after">
                 <button name="approve_fn" string="Approve" type="object" class="oe_highlight"
-                        attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        attrs="{'invisible': ['|','|',('check_bool','=',True), ('approve_bool','=',True),('state', '!=', 'draft')]}"/>
+                 <field name="approve_bool" invisible="1"/>
+                 <field name="amount_total" invisible="1"/>
+                 <field name="check_bool" invisible="1"/>
+
             </xpath>
             <xpath expr="//button[@name='approve_fn']" position="after">
                 <button string="Reject" name="reject_fn" type="object" class="btn-danger"
-                        attrs="{'invisible': [('state', '!=', 'draft')]}"/>
+                        attrs="{'invisible': ['|','|',('check_bool','=',True),('approve_bool','=',True), ('state', '!=', 'draft')]}
+"/>
             </xpath>
         </field>
     </record>
